@@ -30,9 +30,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
-
-
 @Composable
 fun Calculator() {
     val mContext = LocalContext.current
@@ -76,35 +73,29 @@ fun Calculator() {
                         Toast.makeText(mContext,"Lütfen Değer Giriniz",Toast.LENGTH_LONG)
                 }  }) {
                     Text(text = "+")
-
                 }
                 Button(onClick = {
                     if (num1 == null || num2 == null ) {
                         Toast.makeText(mContext,"Lütfen Değer Giriniz",Toast.LENGTH_LONG)
                 } else {
                         result = (num1?.toDoubleOrNull()).sub(num2?.toDoubleOrNull())
-
                 }  }) {
                     Text(text = "-")
-
                 }
                 Button(onClick = {
                     if (num1 == null || num2 == null ) {
                         Toast.makeText(mContext,"Lütfen Değer Giriniz",Toast.LENGTH_LONG)
                 } else {
                         result = (num1?.toDoubleOrNull()).divide(num2?.toDoubleOrNull())
-
                 }
                 }) {
                     Text(text = "/")
-
                 }
                 Button(onClick = {
                     if (num1 == null || num2 == null ) {
                         Toast.makeText(mContext,"Lütfen Değer Giriniz",Toast.LENGTH_LONG)
                 } else {
                         result = (num1?.toDoubleOrNull()).multy(num2?.toDoubleOrNull())
-
                 }  }) {
                     Text(text = "*")
                 }
@@ -125,22 +116,21 @@ fun Calculator() {
         }
     }
 
-private fun Double?.multy(num2: Double?): Double {
+fun Double?.multy(num2: Double?): Double {
 return this!! * num2!!
 }
 
-private fun Double?.divide(num2: Double?): Double {
+fun Double?.divide(num2: Double?): Double {
     return this!! / num2!!
 }
 
-private fun Double?.sub(num2: Double?): Double {
+fun Double?.sub(num2: Double?): Double {
     return this!! - num2!!
 }
 
-private fun Double?.sum(num2: Double?): Double {
+fun Double?.sum(num2: Double?): Double {
     return this!! + num2!!
 }
-
 
 @Preview
 @Composable
